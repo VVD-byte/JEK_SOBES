@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% block title %}SecondTask{% endblock %}
+{% block content %}
+<style>
+    table{
+        float:left;
+        margin-left:20px;
+    }
+</style>
+    <table border="1" cellpadding="5">
+        <tr>
+            <th>Соответствия</th>
+        </tr>
+        {% for i in data.sootv %}
+        <tr>
+            <td>{{ i }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <table border="1" cellpadding="5">
+        <tr>
+            <th>Не найден платеж для долга</th>
+        </tr>
+        {% for i in data.not_Acc %}
+        <tr>
+            <td>{{ i }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <table border="1" cellpadding="5">
+        <tr>
+            <th>Не найден долг для платежа</th>
+        </tr>
+        {% for i in data.not_Pay %}
+        <tr>
+            <td>{{ i }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+{% endblock %}

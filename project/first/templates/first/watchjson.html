@@ -1,6 +1,10 @@
 {% extends 'base.html' %}
 {% block title %}FirstTask{% endblock %}
 {% block content %}
+    <form action="/first/" method="post">
+        {% csrf_token %}
+        <button type="submit">Сгенерировать</button>
+    </form>
     <div>
         {% for i in UserData %}
             <div>

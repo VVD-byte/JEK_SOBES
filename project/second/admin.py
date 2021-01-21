@@ -1,3 +1,5 @@
 from django.contrib import admin
+from .models import Accrual, Payment
 
-# Register your models here.
+admin.site.register(Accrual)
+admin.site.register(Payment)

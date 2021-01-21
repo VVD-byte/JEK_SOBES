@@ -1,3 +1,9 @@
 from django.db import models
 
-# Create your models here.
+class Accrual(models.Model):
+    date = models.DateTimeField(auto_created=True)
+    month = models.IntegerField()
+
+class Payment(models.Model):
+    date = models.DateTimeField(auto_created=True)
+    month = models.IntegerField()

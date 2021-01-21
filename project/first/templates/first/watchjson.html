@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block title %}FirstTask{% endblock %}
+{% block content %}
+    <div>
+        {% for i in UserData %}
+            <div>
+                <a href="/first/{{ i.number }}">{{ i.name }} - {{ i.number }}</a>
+            </div>
+        {% endfor %}
+    </div>
+    <div style="display:block; float:left;">
+        <div style="display:block; float:left;">
+            <a>Начальные данные</a>
+            <pre id="startjson">
+            </pre>
+        </div>
+        <div style="display:block; float:left; margin-left:200px;">
+            <a>Обработанные данные</a>
+            <pre id="endjson">
+            </pre>
+        </div>
+    </div>
+    <script>
+        let d_1 = {{ startdata|safe }};
+        document.getElementById('startjson').innerHTML =  JSON.stringify(d_1, null, "\t");
+        let d_2 = {{ enddata|safe }};
+        document.getElementById('endjson').innerHTML =  JSON.stringify(d_2, null, "\t");
+    </script>
+{% endblock %}

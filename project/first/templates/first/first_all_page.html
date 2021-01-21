@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block title %}FirstTask{% endblock %}
+{% block content %}
+    <form action="" method="post">
+        {% csrf_token %}
+        <button type="submit">Сгенерировать</button>
+    </form>
+    <div>
+        {% for i in UserData %}
+            <div>
+                <a href="/first/{{ i.number }}">{{ i.name }} - {{ i.number }}</a>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}
